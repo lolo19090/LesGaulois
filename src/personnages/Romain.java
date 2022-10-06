@@ -30,4 +30,17 @@ public class Romain {
 		}
 		
 	}
+	@Override
+	public String toString() {
+		return "Romain [nom=" + nom + ", force=" + force+ "]";
+	}
+	
+	
+	public static void main(String[] args) {
+		 Romain minus = new Romain("Minus", 6);
+		 System.out.println(minus);
+		 minus.parler("Je vais te battre !");
+		 minus.recevoirCoup(7);
+
+	}
 }
