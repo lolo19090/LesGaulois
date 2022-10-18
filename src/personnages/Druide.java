@@ -30,7 +30,7 @@ public class Druide {
 	public void preparerPotion() {
 		Random random = new Random();
 		this.forcePotion = random.nextInt(effetPotionMax-effetPotionMin) + effetPotionMin;
-		if (this.forcePotion > 7) {
+		if (this.forcePotion > 6) {
 			parler("J'ai préparé une super potion de force " + this.forcePotion);
 		}
 		else {
@@ -42,6 +42,7 @@ public class Druide {
 	
 	public static void main(String[] args) {
 		Druide panoramix = new Druide("Panoramix",5,10);
+		System.out.println(panoramix);
 		panoramix.preparerPotion();	
 	}
 	
