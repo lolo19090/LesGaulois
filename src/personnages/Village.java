@@ -1,5 +1,7 @@
 package personnages;
-
+import personnages.Gaulois;
+import personnages.Romain;
+import personnages.Druide;
 
 public class Village { 
 	private String nom; 
@@ -12,6 +14,7 @@ public class Village {
 	public Village(String nom, int nbMax) { 
 		this.nom = nom; 
 		this.nbVillageoisMax = nbMax;
+		this.villageois = new Gaulois[nbMax];
 	} 
 
 	
@@ -31,18 +34,33 @@ public class Village {
 	}
 	
 	public Gaulois trouverHabitant(int num) {
-		return this.villageois[num-1];
-		
+		return this.villageois[num];
+	
 	}
+	
+	public void afficherVillageois() {
+		int i = 0;
+		System.out.println("Dans "+getNom()+ " du chef "+this.chef.getNom()+" vivent les légendaires gaulois : ");
+		while(i<this.nbVillageois) {
+			System.out.println("- "+ villageois[i].getNom());
+			i=i+1;
+		}
+				
+				
+	
+	}
+	
 	
 	public static void main(String[] args) {
 		Village village = new Village("Village des Irréductibles",30);
-		 System.out.println(village);
-//		 Gaulois gaulois = village.trouverHabitant(30);
-		 Gaulois asterix = new Gaulois("Asterix",5);
-		 village.ajouterHabitant(asterix);
-		 
-		 
+		Chef chef = new Chef("Abraracourcix",6,village);
+		village.setChef(chef);
+		Gaulois asterix = new Gaulois("Asterix",8);
+		Gaulois obelix = new Gaulois("Obelix",25);
+		village.ajouterHabitant(asterix);
+		village.ajouterHabitant(obelix);
+		village.afficherVillageois();
+		
 
 	}
 }
