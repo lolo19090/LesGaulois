@@ -40,7 +40,7 @@ public class Village {
 	
 	public void afficherVillageois() {
 		int i = 0;
-		System.out.println("Dans "+getNom()+ " du chef "+this.chef.getNom()+" vivent les légendaires gaulois : ");
+		System.out.println("Dans "+getNom()+ " du chef "+this.chef.getNom()+" vivent les lï¿½gendaires gaulois : ");
 		while(i<this.nbVillageois) {
 			System.out.println("- "+ villageois[i].getNom());
 			i=i+1;
@@ -52,7 +52,7 @@ public class Village {
 	
 	
 	public static void main(String[] args) {
-		Village village = new Village("Village des Irréductibles",30);
+		Village village = new Village("Village des IrrÃ©ductibles",30);
 		Chef chef = new Chef("Abraracourcix",6,village);
 		village.setChef(chef);
 		Gaulois asterix = new Gaulois("Asterix",8);
