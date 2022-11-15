@@ -43,6 +43,7 @@ public class Romain {
 		switch (force) {
 		case 0:
 			parler("Aïe");
+			break;
 			
 		default:
 			equipementEjecte = ejecterEquipement();
