@@ -31,7 +31,7 @@ public class Gaulois {
 	
 	public void frapper(Romain romain) {
 		System.out.println(nom + " envoie un grand coup dans la mâchoire de " + romain.getNom());
-		Equipement equipement[] = romain.recevoirCoup((force / 3) * effetPotion);
+		Equipement[] equipement = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; equipement != null && i < equipement.length; i++,
 				nbtrophees++) {
 				this.trophees[nbtrophees] = equipement[i];
@@ -40,18 +40,24 @@ public class Gaulois {
 
 	@Override
 	public String toString() {
-		return "Gaulois [nom=" + nom + ", force=" + force + ", effetPotion=" + effetPotion + "]";
+		return "Gaulois [nom=" + nom + ", force=" + force + ", e∑ffetPotion=" + effetPotion + "]";
 	}
 	
 	public void boirePotion(int forcePotion) {
 		this.effetPotion = forcePotion;
-		parler("Merci Druide, je sens que ma force est " + forcePotion + " fois d�cupl�e");
+		parler("Merci Druide, je sens que ma force est " + forcePotion + " fois décuplée");
+		
+		
+	}
+	
+	
+	public void faireUneDonnation(Musee musee) {
 		
 		
 	}
 
 	public static void main(String[] args) {
-		 Gaulois asterix = new Gaulois("Ast�rix", 8);
+		 Gaulois asterix = new Gaulois("Astérix", 8);
 		 System.out.println(asterix);
 		 asterix.parler("Bonjour !!");
 		 asterix.boirePotion(4);
